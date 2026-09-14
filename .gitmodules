@@ -157,3 +157,6 @@
 [submodule "vlsi/hammer"]
 	path = vlsi/hammer
 	url = https://github.com/ucb-eecs151tapeout/ofot-hammer
+[submodule "generators/rpc-dram-wrapper"]
+	path = generators/rpc-dram-wrapper
+	url = git@github.com:navyrose/rpc-dram-wrapper.git
