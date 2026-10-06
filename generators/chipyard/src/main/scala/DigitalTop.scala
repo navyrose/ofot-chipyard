@@ -38,6 +38,7 @@ class DigitalTop(implicit p: Parameters) extends ChipyardSystem
   with chipyard.clocking.HasChipyardPRCI // Use Chipyard reset/clock distribution
   with chipyard.clocking.CanHaveClockTap // Enables optionally adding a clock tap output port
   with fftgenerator.CanHavePeripheryFFT // Enables optionally having an MMIO-based FFT block
+  with rpcdram.CanHavePeripheryRpcDram //Enables optionally adding the RPC DRAM controller
   with constellation.soc.CanHaveGlobalNoC // Support instantiating a global NoC interconnect
   with rerocc.CanHaveReRoCCTiles // Support tiles that instantiate rerocc-attached accelerators
 {
