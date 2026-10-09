@@ -564,3 +564,11 @@ class WithGCDBusyPunchthrough extends OverrideIOBinder({
     (Seq(GCDBusyPort(() => io_gcd_busy)), Nil)
   }.getOrElse((Nil, Nil))
 })
+
+class WithRpcDramPhyPunchthrough extends OverrideIOBinder({
+  (system: rpcdram.CanHavePeripheryRpcDram) => system.rpcdram_phy.map { phy =>
+    val io_phy = IO(new rpcdram.RpcDramPhyIO)
+    io_phy <> phy
+    (Seq(RpcDramPhyPort(() => io_phy)), Nil)
+  }.getOrElse((Nil, Nil))
+})

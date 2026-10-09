@@ -332,3 +332,13 @@ class WithResetFromHarness extends HarnessBinder({
   }
 })
 
+
+// Temporary harness-side stand-in for the DRAM: drive the PHY input pins to zero.
+// Replace the body with a DRAM model once one is available.
+class WithRpcDramPhyTieOff extends HarnessBinder({
+  case (th: HasHarnessInstantiators, port: RpcDramPhyPort, chipId: Int) => {
+    port.io.phy_dqs_i   := false.B
+    port.io.phy_dqs_n_i := false.B
+    port.io.phy_db_i    := 0.U
+  }
+})

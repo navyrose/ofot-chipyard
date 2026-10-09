@@ -111,3 +111,6 @@ case class TLMemPort       (val getIO: () => HeterogeneousBag[TLBundle])
 
 case class GCDBusyPort     (val getIO: () => Bool)
     extends Port[Bool]
+
+case class RpcDramPhyPort  (val getIO: () => rpcdram.RpcDramPhyIO)
+    extends Port[rpcdram.RpcDramPhyIO]
